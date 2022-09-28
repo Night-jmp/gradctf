@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+import sys
+
+def validate(flag1, flag2):
+    if flag1 == flag2:
+        return "Flag is valid!"
+    else:
+        return "Please try again!"
+
+if __name__ == "__main__":
+    fd = open("flag.txt", "r")
+    flag = fd.read().strip()
+    if len(sys.argv) < 2:
+        print("You didn't submit anything...")
+        sys.exit(1)
+
+    is_valid = validate(flag, sys.argv[1])
+    print(is_valid)

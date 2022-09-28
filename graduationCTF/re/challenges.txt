@@ -1,0 +1,5 @@
+easy python
+easy C
+easy asm
+
+

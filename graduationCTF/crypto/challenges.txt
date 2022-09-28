@@ -1,0 +1,7 @@
+hex
+base64
+binary
+rot13
+rail fence
+XOR
+atbash

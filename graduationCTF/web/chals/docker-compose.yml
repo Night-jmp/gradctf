@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+    robots:
+        build: ./services/robots
+        command: python manage.py run -h 0.0.0.0 -p 5006
+        ports:
+            - 5006:5006
+        env_file:
+            - ./.env
+        read_only: true
+    source:
+        build: ./services/source
+        command: python manage.py run -h 0.0.0.0 -p 5007
+        ports:
+            - 5007:5007
+        env_file:
+            - ./.env
+        read_only: true
+    command_injection:
+        build: ./services/command_injection
+        command: python manage.py run -h 0.0.0.0 -p 5008
+        ports:
+            - 5008:5008
+        env_file:
+            - ./.env
+        read_only: true
+    cookie:
+        build: ./services/cookie
+        command: python manage.py run -h 0.0.0.0 -p 5009
+        ports:
+            - 5009:5009
+        env_file:
+            - ./.env
+        read_only: true
+    trmplate_injection:
+        build: ./services/template_injection
+        command: python manage.py run -h 0.0.0.0 -p 5010
+        ports:
+            - 5010:5010
+        env_file:
+            - ./.env
+        read_only: true
